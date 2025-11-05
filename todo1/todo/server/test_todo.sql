@@ -13,7 +13,7 @@ create table account (
 );
 
 insert into task (description) values
-('Olet oikeassa'),
+('Olet testissä'),
 ('Review the code changes'),
 ('Prepare for the team meeting'),
 ('Update the project timeline'),

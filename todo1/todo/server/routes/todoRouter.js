@@ -1,5 +1,6 @@
 import { pool } from '../helper/db.js'
 import { Router } from 'express'
+import { auth } from '../helper/auth.js'
 
 const router = Router()
 const port = process.env.PORT
@@ -19,7 +20,7 @@ router.listen(port, () => {
 })
  */
 
-router.post('/create', (req, res, next) => {
+router.post('/create', auth,(req, res, next) => {
  const { task } = req.body
 
     if (!task) {
@@ -37,7 +38,7 @@ router.post('/create', (req, res, next) => {
 
 })
 
-router.delete('/delete/:id', (req, res, next) => {
+router.delete('/delete/:id', auth,(req, res, next) => {
  const { id } = req.params
 
  console.log(`Deleting task with id: ${id}`)
